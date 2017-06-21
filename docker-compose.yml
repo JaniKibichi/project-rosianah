@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+	db:
+		image: mysql:5.7
+		volumes:
+			- db_data:/var/lib/mysql
+		restart: always
+		environment:
+			MYSQL_ROOT_PASSWORD: rosianah
+			MYSQL_DATABASE: ussd
+			MYSQL_USER: ussd
+			MYSQL_PASSWORD: ussd
+
+	ussd:
+		depends_on:
+			- db
+		build: .
+		command: /usr/bin/hhvm -m server -p 8080
+		ports:
+			- "8000:80"
+		restart: always
+		environment:
+			USSD_DB_HOST: db:3306
+			USSD_DB_USER: ussd
+			USSD_DB_PASSWORD: ussd
+			AT_API_KEY: b5c3fb350dcfe8a5e90f97d6f12c08793aaff1d61f0a5128fed37373af6107d9
+			AT_USER_NAME: Rosianah
+		volumes:
+			db_data:
