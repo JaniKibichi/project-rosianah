@@ -6,7 +6,7 @@ services:
       MYSQL_PASSWORD: ussd
       MYSQL_ROOT_PASSWORD: rosianah
       MYSQL_USER: ussd
-    image: "mysql:5.7"
+    build: "./database/"
     restart: always
 
   ussd: 

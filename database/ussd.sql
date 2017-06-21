@@ -1,3 +1,7 @@
+CREATE USER IF NOT EXISTS 'ussd'@'localhost' IDENTIFIED BY 'ussd';
+
+CREATE DATABASE IF NOT EXISTS ussd;
+
 USE ussd;
 
 CREATE TABLE Sessionlevels (
