@@ -1,8 +1,7 @@
-CREATE USER IF NOT EXISTS 'ussd'@'localhost' IDENTIFIED BY 'ussd';
+-- CREATE USER IF NOT EXISTS 'ussd'@'localhost' IDENTIFIED BY 'ussd';
 
-CREATE DATABASE IF NOT EXISTS ussd;
+-- CREATE DATABASE IF NOT EXISTS ussd;
 
-USE ussd;
 
 CREATE TABLE Sessionlevels (
     session_id varchar(50),
