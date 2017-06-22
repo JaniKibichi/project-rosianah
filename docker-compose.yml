@@ -21,7 +21,7 @@ services:
       USSD_DB_PASSWORD: ussd
       USSD_DB_USER: ussd
     ports: 
-      - "8000:80"
+      - "8080:8080"
     restart: always
 
 
